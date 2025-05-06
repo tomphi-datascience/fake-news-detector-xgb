@@ -9,4 +9,3 @@ joblib
 imbalanced-learn
 wordcloud
 streamlit
-cloudpickle
