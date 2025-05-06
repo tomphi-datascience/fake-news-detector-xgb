@@ -1,15 +1,12 @@
 import streamlit as st
-import cloudpickle
+import joblib
 import re
 
-# Load the TF-IDF vectorizer and trained XGBoost model using cloudpickle
-with open("tfidf_vectorizer.pkl", "rb") as f:
-    tfidf = cloudpickle.load(f)
+# Load the TF-IDF vectorizer and trained XGBoost model using joblib
+tfidf = joblib.load("tfidf_vectorizer.pkl")
+model = joblib.load("fakenews_model.pkl")
 
-with open("fakenews_model.pkl", "rb") as f:
-    model = cloudpickle.load(f)
-
-# Set page config
+# Set page configuration
 st.set_page_config(page_title="Fake News Classifier", layout="centered")
 
 # Text cleaning function (same as training)
